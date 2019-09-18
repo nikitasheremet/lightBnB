@@ -27,6 +27,7 @@ $(() => {
     logIn(data)
       .then(json => {
         console.log(json);
+        // console.log(json.user);
         if (!json.user) {
           views_manager.show('error', 'Failed to login');
           return;
@@ -41,5 +42,5 @@ $(() => {
     views_manager.show('listings');
     return false;
   });
-      
+
 });

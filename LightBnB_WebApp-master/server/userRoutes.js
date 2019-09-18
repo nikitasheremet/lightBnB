@@ -35,6 +35,7 @@ module.exports = function(router, database) {
   exports.login = login;
 
   router.post('/login', (req, res) => {
+    // console.log(req.body);
     const {email, password} = req.body;
     login(email, password)
       .then(user => {
@@ -47,7 +48,7 @@ module.exports = function(router, database) {
       })
       .catch(e => res.send(e));
   });
-  
+
   router.post('/logout', (req, res) => {
     req.session.userId = null;
     res.send({});
@@ -66,7 +67,7 @@ module.exports = function(router, database) {
           res.send({error: "no user with that id"});
           return;
         }
-    
+
         res.send({user: {name: user.name, email: user.email, id: userId}});
       })
       .catch(e => res.send(e));
