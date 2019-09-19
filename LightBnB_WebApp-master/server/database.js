@@ -137,7 +137,7 @@ const getAllProperties = function(options, limit = 10) {
 
   // 5
   queryString = queryString.replace(/WHERE/gi,'AND').replace(/AND/, 'WHERE');
-  console.log(queryString, queryParams);
+  // console.log(queryString, queryParams);
 
   // 6
 
